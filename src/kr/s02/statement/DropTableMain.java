@@ -5,7 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class UpdateTestMain {
+
+public class DropTableMain {
 	public static void main(String[] args) {
 		
 		String db_driver = "oracle.jdbc.OracleDriver";
@@ -22,13 +23,14 @@ public class UpdateTestMain {
 			Class.forName(db_driver);
 			//2
 			conn = DriverManager.getConnection(db_url,db_id,db_password);
-			//SQL문
-			sql = "UPDATE test1 SET age=90 WHERE id='sky'"; //아이디 sky인 것 중 age를 90으로 변경, 없는 정보 => 0으로 출력(에러 x), where절 중요!
+			System.out.println("test1 테이블 제거를 시작합니다.");
+			//SQL
+			sql = "DROP TABLE test1";
 			//3
 			stmt = conn.createStatement();
-			//4-SQL문 실행해서 ㅎ나의 행의 정보를 수정함, 수정한 행의 개수를 반환
-			int count = stmt.executeUpdate(sql);
-			System.out.println(count +"개 행의 정보를 수정했습니다.");
+			//4
+			stmt.executeUpdate(sql);
+			System.out.println("테이블이 정상적으로 삭제되었습니다.");
 			
 		}catch(Exception e) {
 			e.printStackTrace();

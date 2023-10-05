@@ -39,10 +39,10 @@ public class SelectTestMain {
 //				System.out.print("\t");
 //				System.out.println(rs.getInt("age"));
 				
-				//컬럼 인덱스를 통해서 데이터를 반환
-				System.out.print(rs.getString(1));
+				//컬럼 인덱스를 통해서 데이터를 반환(컬럼 인덱스가 작은 경우 사용)
+				System.out.print(rs.getString(1)); //1번째 매핑되어있는 데이터를 string타입으로 반환
 				System.out.print("\t");
-				System.out.println(rs.getInt(2));
+				System.out.println(rs.getInt(2)); //2번째 매핑되어있는 데이터를 int 타입으로 반환(getString으로 사용 가능-모를 떄)
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
