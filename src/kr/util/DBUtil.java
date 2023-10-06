@@ -7,7 +7,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement; //statement의 자식
 
-public class DBUtil {
+public class DBUtil { 
+	//밖에선 호출 불가능
 	private static final String DB_DRIVER = "oracle.jdbc.OracleDriver";
 	private static final String DB_URL = "jdbc:oracle:thin:@localhost:1521:xe"; 
 	private static final String DB_ID = "c##user001";

@@ -26,7 +26,7 @@ public class InsertTestMain {
 			conn = DriverManager.getConnection(db_url, db_id, db_password);
 			
 			//SQL문장(4단계 전에만 명시) -insert가 여러개일 경우 수작업 commit,rollback으로 명시해야 오류가 나지 않음
-			sql = "INSERT INTO test1 (id,age) VALUES ('wave',10)";
+			sql = "INSERT INTO test1 (id,age) VALUES ('s''ing',20)";
 			
 			//JDBC 수행 3단계 - Statement 객체 생성
 			stmt = conn.createStatement();

@@ -22,7 +22,7 @@ public class InsertTestMain {
 			pstmt = conn.prepareStatement(sql);
 			
 			//?에 데이터를 바인딩
-			pstmt.setString(1, "dragon"); //1번(id) ?에 데이터를 전달
+			pstmt.setString(1, "h'ing"); //1번(id) ?에 데이터를 전달
 			pstmt.setInt(2, 90); //2번(age) ?에 데이터 전달
 			
 			//JDBC 수행 4단계 : SQL문을 실행해서 테이블에 행을 추가
