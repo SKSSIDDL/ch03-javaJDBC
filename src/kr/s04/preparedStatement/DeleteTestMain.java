@@ -9,6 +9,15 @@ import java.sql.PreparedStatement;
 
 import kr.util.DBUtil;
 
+/*
+ * DB 연동 작업
+ *  CRUD  = DML문
+ * Create = INSERT
+ * Read = SELECT
+ * Update = UPDATE
+ * Delete = DELETE
+ */
+
 public class DeleteTestMain {
 	public static void main(String[] args) {
 		BufferedReader br = null;
