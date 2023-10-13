@@ -26,9 +26,3 @@ create table reservation(
 
 create sequence reservation_seq;
 
-2.관리자 도서 목록 보기(보류)
-4.관리자 회원 목록
-5.사용자 도서 대출
-6.관리자 대출 목록
-7.사용자 MY대출 목록
-8.사용자 대출 도서 반납

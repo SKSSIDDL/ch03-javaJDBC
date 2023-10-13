@@ -24,7 +24,7 @@ public class BookAdminMain {
 	public void callMenu() throws IOException{
 		while(true) {
 			System.out.print("1.도서 등록 | 2.도서 목록 | 3.대출 목록 | 4.회원 목록 | 5.종료> ");
-			try {
+			try {									//상품구매참고
 				int no = Integer.parseInt(br.readLine());
 				if(no==1) {//도서 등록
 					System.out.print("도서명 : ");
@@ -41,7 +41,7 @@ public class BookAdminMain {
 					 *  42   천문   별이야기 대출가능  2023-10-11
 					 *  41   IT     자바    대출중  2023-10-11
 					 * -------------------------------------
-					 * 
+					 *
 					 */
 					dao.selectBook();
 				}else if(no==3) {//대출 목록(reservation)
@@ -53,6 +53,7 @@ public class BookAdminMain {
 					 * 19   반납     sky     별이야기  2023-10-09  2023-10-10
 					 * -----------------------------------------------------
 					 */
+					dao.selectReservation();
 				}else if(no==4) {//회원 목록(member)
 					/*
 					 * ------------------------------------------

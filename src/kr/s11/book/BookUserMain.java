@@ -1,6 +1,5 @@
 package kr.s11.book;
 
-import java.awt.image.DataBufferDouble;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
@@ -71,10 +70,9 @@ public class BookUserMain {
 			}
 		}
 		
-		while(flag) { //로그인을 못할시 flag 진입x
+		while(flag) { //로그인이 되었을 때 진입(true)
 			System.out.println("==============================================");
-			System.out.print("1.도서대출 | 2.MY대출목록 | 3.대출도서 반납 | 4.종료> "+"\n"); //MY대출목록 읽어올 때 위에 있는 me_id 변수 사용
-			System.out.println("==============================================");
+			System.out.print("1.도서대출 | 2.MY대출목록 | 3.대출도서 반납 | 4.종료> "); //MY대출목록 읽어올 때 위에 있는 me_id 변수 사용
 
 			try {
 				int no = Integer.parseInt(br.readLine());
@@ -86,11 +84,19 @@ public class BookUserMain {
 					 * 43     IT      자바    대출가능  2023-10-10
 					 * 42     천문    별이야기  대출가능  2023-10-10
 					 * ========================================
-					 * 
+					 *
 					 * [도서 대출하기]
 					 * 도서 번호 : 43
 					 * 도서 1건이 대출되었습니다.
 					 */
+					dao.selectBook();
+					System.out.print("도서 번호 : ");
+					int bk_num = Integer.parseInt(br.readLine());
+					System.out.print("아이디 : ");
+					me_id = br.readLine();
+					
+					dao.insertBookReservation(bk_num, me_id);	
+					
 				}else if(no==2) {//MY대출목록
 					/*
 					 * ===================================
@@ -98,6 +104,11 @@ public class BookUserMain {
 					 * 41    자바     대출중   2023-10-10
 					 * ===================================
 					 */
+					System.out.print("아이디 : ");
+					me_id = br.readLine();
+					
+					dao.selectmyReservation(me_id);
+					
 				}else if(no==3) {//대출도서 반납
 					/*
 					 * ========================================
@@ -108,6 +119,16 @@ public class BookUserMain {
 					 * 대출번호 : 41
 					 * 1건의 도서가 반납되었습니다.
 					 */
+					System.out.print("아아디 : ");
+					me_id = br.readLine();
+					
+					dao.selectmyReservation(me_id);
+					
+					System.out.print("번호 : ");
+					int re_num = Integer.parseInt(br.readLine());
+					
+					dao.updateReservation(me_id,re_num);
+					
 				}else if(no==4) {
 					System.out.println("프로그램 종료");
 					break;
